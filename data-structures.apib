@@ -1,0 +1,57 @@
+# Data Structures
+
+## Pager
+
++ total: 4 (number)
++ per_page: 15 (number)
++ current_page: 1 (number)
++ last_page: 1 (number)
++ from: 1 (number)
++ to: 2 (number)
+
+## Storyboard (object)
++ id: 11212 (number)
++ title: `Teszt` (string)
++ cover_image: `http://example.org/images/123.png` (string)
++ video: `http://example.org/videos/123.mp4` (string)
++ rendered: false (boolean)
++ configuration
+    + Include StoryboardConfiguration
++ user
+    + Include User
++ created_at: `2017-03-12T12:12:12` (string)
+
+
+## Template (object)
++ id: 11212 (number)
++ title: `Teszt` (string)
++ cover_image: `http://example.org/images/123.png` (string)
++ video: `http://example.org/videos/123.mp4` (string)
++ rendered: false (boolean)
++ configuration
+    + Include StoryboardConfiguration
++ user
+    + Include User
++ created_at: `2017-03-12T12:12:12` (string)
+
+
+## StoryboardConfiguration (object)
++ id: 11212 (number)
+
+
+## StoryboardPager (object)
++ Include Pager
++ data: Storyboard, Storyboard (array[Storyboard])
+
+
+## TemplatePager (object)
++ Include Pager
++ data: Template, Template (array[Template])
+
+
+## User (object)
+
++ id: 11212 (number)
++ first_name: `Teszt` (string)
++ last_name: `Elek` (string)
++ email: `elek.teszt@example.org` (string)

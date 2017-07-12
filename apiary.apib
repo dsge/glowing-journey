@@ -1,80 +1,122 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://ebu-storyboard-app.apiblueprint.org
 
-# ebu storyboard app
+# EBU Storyboard
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+## Important Info
+- Minden http request `Content-type: application/json`-t küld és fogad, kivéve, ha mást írunk lentebb
+- Minden API endpoint standard http headerekkel és http hibakódokkal dolgozik
+- Ha a kliensnek van auth tokene (azaz “be van jelentkezve”), akkor minden további http requesthez csatolnia kell egy `Authorization: Bearer <auth token>` headert
 
-## Questions Collection [/questions]
 
-### List All Questions [GET]
+## STORYBOARD [/storyboard]
+Storyboard related endpoints
+
+### List [GET]
+Get the storyboard list
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+    + Attributes(StoryboardPager)
+    
+### Create [POST]
+Create new storyboard
 
 + Request (application/json)
 
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
+    + Body
+    
+            {
+                "email": "example@gmail.com"
+            }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
-    + Headers
+    + Attributes(Storyboard)
 
-            Location: /questions/2
+## STORYBOARD Details [/storyboard/{id}]
+Storyboard Details related endpoints
+
++ Parameters
+    + id (required, number, `1`) - Storyboard ID or current
+
+### Show [GET]
+Get a storyboard by ID
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
+    
+### Edit [PUT]
+Edit storyboard
+
++ Request (application/json)
 
     + Body
-
+    
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "email": "example@gmail.com"
             }
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
+
+
+# Data Structures
+
+## Pager
+
++ total: 4 (number)
++ per_page: 15 (number)
++ current_page: 1 (number)
++ last_page: 1 (number)
++ from: 1 (number)
++ to: 2 (number)
+
+## Storyboard (object)
++ id: 11212 (number)
++ title: `Teszt` (string)
++ cover_image: `http://example.org/images/123.png` (string)
++ video: `http://example.org/videos/123.mp4` (string)
++ rendered: false (boolean)
++ configuration
+    + Include StoryboardConfiguration
++ user
+    + Include User
++ created_at: `2017-03-12T12:12:12` (string)
+
+
+## Template (object)
++ id: 11212 (number)
++ title: `Teszt` (string)
++ cover_image: `http://example.org/images/123.png` (string)
++ video: `http://example.org/videos/123.mp4` (string)
++ rendered: false (boolean)
++ configuration
+    + Include StoryboardConfiguration
++ user
+    + Include User
++ created_at: `2017-03-12T12:12:12` (string)
+
+
+## StoryboardConfiguration (object)
++ id: 11212 (number)
+
+
+## StoryboardPager (object)
++ Include Pager
++ data: Storyboard, Storyboard (array[Storyboard])
+
+
+## TemplatePager (object)
++ Include Pager
++ data: Template, Template (array[Template])
+
+
+## User (object)
+
++ id: 11212 (number)
++ first_name: `Teszt` (string)
++ last_name: `Elek` (string)
++ email: `elek.teszt@example.org` (string)

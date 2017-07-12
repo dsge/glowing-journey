@@ -1,0 +1,52 @@
+## STORYBOARD [/storyboard]
+Storyboard related endpoints
+
+### List [GET]
+Get the storyboard list
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardPager)
+    
+### Create [POST]
+Create new storyboard
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "email": "example@gmail.com"
+            }
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
+
+## STORYBOARD Details [/storyboard/{id}]
+Storyboard Details related endpoints
+
++ Parameters
+    + id (required, number, `1`) - Storyboard ID or current
+
+### Show [GET]
+Get a storyboard by ID
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
+    
+### Edit [PUT]
+Edit storyboard
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "email": "example@gmail.com"
+            }
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
