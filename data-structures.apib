@@ -19,6 +19,8 @@
     + Include StoryboardConfiguration
 + user
     + Include User
++ folder
+    + Include Folder
 + created_at: `2017-03-12T12:12:12` (string)
 
 
@@ -55,3 +57,16 @@
 + first_name: `Teszt` (string)
 + last_name: `Elek` (string)
 + email: `elek.teszt@example.org` (string)
+
+## Folder (object)
++ id: 11 (number)
++ name: `Example folder`
++ parent
+    + Include ParentFolder
+    
+## ParentFolder (object)
++ id: 11 (number)
++ name: `Example folder`
++ parent: null
+
+    

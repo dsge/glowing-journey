@@ -1,0 +1,26 @@
+## USER Storyboard [/user/{id}/storyboard]
+
++ Parameters
+    + id (required, number, `1`) - User ID or me
+
+### List [GET]
+Get the storyboard list
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardPager)
+    
+### Create [POST]
+Create new storyboard
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "email": "example@gmail.com"
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(Storyboard)
