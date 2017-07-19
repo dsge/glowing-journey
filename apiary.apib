@@ -8,6 +8,27 @@ HOST: http://ebu-storyboard-app.apiblueprint.org
 - Minden API endpoint standard http headerekkel és http hibakódokkal dolgozik
 - Ha a kliensnek van auth tokene (azaz “be van jelentkezve”), akkor minden további http requesthez csatolnia kell egy `Authorization: Bearer <auth token>` headert
 
+# Auth endpoints
+
+## Login with email and password [GET /auth/login]
+User accounts have to be created manually using the Artisan CLI.
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "email": "example@gmail.com",
+                "password": "foo123"
+            }
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "token": "myJwtToken"
+            }
 
 ## STORYBOARD [/storyboard]
 Storyboard related endpoints
