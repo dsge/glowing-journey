@@ -76,7 +76,7 @@ User accounts have to be created manually using the Artisan CLI.
 
     + Attributes(StoryboardFolder)
     
-### Edit [PUT /storyboard_folder]
+### Edit [PUT /storyboard_folder/{id}]
 
 + Request (application/json)
 
@@ -89,6 +89,25 @@ User accounts have to be created manually using the Artisan CLI.
 + Response 200 (application/json)
 
     + Attributes(StoryboardFolder)
+    
+    
+### Delete [DELETE /storyboard_folder/{id}]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+            
+            }
 
 
 ## STORYBOARD [/storyboard]
