@@ -224,9 +224,22 @@ Edit storyboard
 
 ## ThumbnailSize (object)
 + url: `http://example.org/images/123.png` (string)
-+ size (object)
-    + width: 0 (number)
-    + height: 0 (number)
++ width: 0 (number)
++ height: 0 (number)
+
+## ConvertedVideo (object)
++ id: 12 (number)
++ convertation
+    + pending: true (boolean)
+    + completed: false (boolean)
+    + successful: false (boolean)
+    + failed: false (boolean)
++ sources: ConvertedVideoSource, ConvertedVideoSource (array[ConvertedVideoSource])
++ created_at: `2017-03-12 12:12:12` (string)
+
+## ConvertedVideoSource (object)
++ url: `http://example.org/video.mp4` (string)
++ mime_type: `video/mp4`
 
 ## StoryboardTemplatePager (object)
 + Include Pager
