@@ -180,7 +180,8 @@ Edit storyboard
 + id: 11212 (number)
 + title: `Teszt` (string)
 + aspect_ratio: `16by9` (string)
-+ cover_image: `http://example.org/images/123.png` (string)
++ cover_image
+    + Include ImageThumbnail
 + video: `http://example.org/videos/123.mp4` (string)
 + rendered: false (boolean)
 + timeline
@@ -212,11 +213,20 @@ Edit storyboard
 
 ## ImageThumbnail (object)
 + id: 12 (number)
-+ thumbnail_uri: `http://example.org/images/123.png` (string)
-+ thumbnail_size (object)
++ sizes (object)
+    + small
+        + Include ThumbnailSize
+    + medium
+        + Include ThumbnailSize
+    + large
+        + Include ThumbnailSize
++ is_placeholder: false
+
+## ThumbnailSize (object)
++ url: `http://example.org/images/123.png` (string)
++ size (object)
     + width: 0 (number)
     + height: 0 (number)
-+ is_placeholder: false
 
 ## StoryboardTemplatePager (object)
 + Include Pager
