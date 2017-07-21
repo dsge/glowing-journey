@@ -109,6 +109,85 @@ User accounts have to be created manually using the Artisan CLI.
             
             }
 
+## User's Storyboard Template Folders [/user/{user_id}/storyboard_template_folder{?folder_id}]
+
++ Parameters
+    + folder_id (optional) - Filter the list for a parent Folder's `id` field
+
+### List [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardFolderPager)
+    
+### Create [POST]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "title": "My Folder",
+                "folder": {
+                    "id": 23,
+                }
+            }
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardFolder)
+    
++ Request (application/json)
+
+    + Body
+    
+            {
+                "title": "My Folder",
+            }
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardFolder)
+    
+### Show [GET /user/{user_id}/storyboard_template_folder/{id}]
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardFolder)
+    
+### Edit [PUT /user/{user_id}/storyboard_template_folder/{id}]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "title": "My Folder 3"
+            }
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardFolder)
+    
+    
+### Delete [DELETE /user/{user_id}/storyboard_template_folder/{id}]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+            
+            }
+
 ## User's Media Folders [/user/{user_id}/media_folder{?folder_id}]
 
 + Parameters
