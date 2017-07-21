@@ -30,7 +30,7 @@ User accounts have to be created manually using the Artisan CLI.
                 "token": "myJwtToken"
             }
 
-## Storyboard Folders [/storyboard_folder{?folder_id}]
+## User's Storyboard Folders [/user/{user_id}/storyboard_folder{?folder_id}]
 
 + Parameters
     + folder_id (optional) - Filter the list for a parent Folder's `id` field
@@ -70,13 +70,13 @@ User accounts have to be created manually using the Artisan CLI.
 
     + Attributes(StoryboardFolder)
     
-### Show [GET /storyboard_folder/{id}]
+### Show [GET /user/{user_id}/storyboard_folder/{id}]
 
 + Response 200 (application/json)
 
     + Attributes(StoryboardFolder)
     
-### Edit [PUT /storyboard_folder/{id}]
+### Edit [PUT /user/{user_id}/storyboard_folder/{id}]
 
 + Request (application/json)
 
@@ -91,7 +91,7 @@ User accounts have to be created manually using the Artisan CLI.
     + Attributes(StoryboardFolder)
     
     
-### Delete [DELETE /storyboard_folder/{id}]
+### Delete [DELETE /user/{user_id}/storyboard_folder/{id}]
 
 + Request (application/json)
 
@@ -109,7 +109,7 @@ User accounts have to be created manually using the Artisan CLI.
             
             }
 
-## Media Folders [/media_folder{?folder_id}]
+## User's Media Folders [/user/{user_id}/media_folder{?folder_id}]
 
 + Parameters
     + folder_id (optional) - Filter the list for a parent Folder's `id` field
@@ -149,13 +149,13 @@ User accounts have to be created manually using the Artisan CLI.
 
     + Attributes(StoryboardFolder)
     
-### Show [GET /media_folder/{id}]
+### Show [GET /user/{user_id}/media_folder/{id}]
 
 + Response 200 (application/json)
 
     + Attributes(StoryboardFolder)
     
-### Edit [PUT /media_folder/{id}]
+### Edit [PUT /user/{user_id}/media_folder/{id}]
 
 + Request (application/json)
 
@@ -170,7 +170,7 @@ User accounts have to be created manually using the Artisan CLI.
     + Attributes(StoryboardFolder)
     
     
-### Delete [DELETE /media_folder/{id}]
+### Delete [DELETE /user/{user_id}/media_folder/{id}]
 
 + Request (application/json)
 
@@ -189,7 +189,7 @@ User accounts have to be created manually using the Artisan CLI.
             }
 
 
-## STORYBOARD [/storyboard]
+## User's STORYBOARDs [/user/{user_id}/storyboard]
 Storyboard related endpoints
 
 ### List [GET]
@@ -215,7 +215,7 @@ Create new storyboard
 
     + Attributes(Storyboard)
 
-## STORYBOARD Details [/storyboard/{id}]
+## User's STORYBOARD Details [/user/{user_id}/storyboard/{id}]
 Storyboard Details related endpoints
 
 + Parameters
