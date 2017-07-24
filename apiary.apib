@@ -321,6 +321,60 @@ Edit storyboard
 + Response 200 (application/json)
 
     + Attributes(Storyboard)
+    
+## User's TEMPLATEs [/user/{user_id}/template]
+Template related endpoints
+
+### List [GET]
+Get the template list
+
++ Response 200 (application/json)
+
+    + Attributes(StoryboardPager)
+    
+### Create [POST]
+Create new template
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "title": "My Awesome Storyboard",
+                "aspect_ratio": "16by9"
+            }
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
+
+## User's TEMPLATE Details [/user/{user_id}/template/{id}]
+Storyboard Details related endpoints
+
++ Parameters
+    + id (required, number, `1`) - Template ID or current
+
+### Show [GET]
+Get a template by ID
+
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
+    
+### Edit [PUT]
+Edit template
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "title": "My Awesome template"
+            }
+Us
++ Response 200 (application/json)
+
+    + Attributes(Storyboard)
 
 
 # Data Structures
