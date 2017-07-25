@@ -348,7 +348,13 @@ Create new template
 
     + Attributes(Storyboard)
 
+## User's medias [/user/{user_id}/media]
 
+### List [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(MediaPager)
 
 # Data Structures
 
@@ -466,6 +472,9 @@ Create new template
 + media
     + Include ConvertedAudio
 
+## MediaPager (object)
++ Include Pager
++ data: ImageMedia, ImageMedia, VideoMedia, AudioMedia (array[Media])
 
 ## StoryboardTemplatePager (object)
 + Include Pager
