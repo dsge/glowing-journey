@@ -355,6 +355,46 @@ Create new template
 + Response 200 (application/json)
 
     + Attributes(MediaPager)
+    
+### Create [POST]
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+        -----BOUNDARY
+        Content-Disposition: form-data; name="image[file]"; filename="image.jpg"
+        Content-Type: image/jpeg
+        Content-Transfer-Encoding: base64
+
+        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+        HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+        MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+        AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+        AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+        -----BOUNDARY
+
++ Response 201 (application/json)
+
+    + Attributes(ImageMedia)
+    
+### Update [PUT /user/{user_id}/media/{id}]
+
+You cannot modify the media file itself.
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "title": "My Awesome File 2"
+            }
+        
++ Response 200 (application/json)
+
+    + Attributes(ImageMedia)
+    
+### Update [DELETE /user/{user_id}/media/{id}]
+
++ Response 204 (application/json)
 
 # Data Structures
 
