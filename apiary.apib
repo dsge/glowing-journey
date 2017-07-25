@@ -299,7 +299,8 @@ Storyboard Details related endpoints
 
 + Parameters
     + id (required, number, `1`) - Storyboard ID or current
-yboa
+
+### Show [GET]
 Get a storyboard by ID
 
 + Response 200 (application/json)
@@ -321,7 +322,7 @@ Edit storyboard
 
     + Attributes(Storyboard)
     
-## User's TEMPLATEs [/user/{user_id}/template]
+## User's TEMPLATEs [/user/{user_id}/storyboard_template]
 Template related endpoints
 
 ### List [GET]
@@ -347,33 +348,6 @@ Create new template
 
     + Attributes(Storyboard)
 
-## User's TEMPLATE Details [/user/{user_id}/storyboard_template/{id}]
-Storyboard Details related endpoints
-
-+ Parameters
-    + id (required, number, `1`) - Template ID or current
-
-### Show [GET]
-Get a template by ID
-
-+ Response 200 (application/json)
-
-    + Attributes(Storyboard)
-    
-### Edit [PUT]
-Edit template
-
-+ Request (application/json)
-
-    + Body
-    
-            {
-                "title": "My Awesome template"
-            }
-Us
-+ Response 200 (application/json)
-
-    + Attributes(Storyboard)
 
 
 # Data Structures
