@@ -436,7 +436,32 @@ You cannot modify the media file itself.
 + data: StoryboardFolder, StoryboardFolder (array[StoryboardFolder])
 
 ## StoryboardTimeline (object)
-+ id: 11212 (number)
++ title: `my layer` (string)
++ order_weight: 10 (number)
++ layers: StoryboardTimelineLayer, StoryboardTimelineLayer (array[StoryboardTimelineLayer])
+
+## StoryboardTimelineLayer (object)
++ clips: StoryboardTimelineLayerClip
+
+## StoryboardTimelineLayerClip (object)
++ effects (object)
+    + fadein (object)
+        + until
+            + Include TimelineTimestamp
+
+## StoryboardTimelineLayerTextClip (object)
++ type: `text` (string)
+
+## StoryboardTimelineLayerImageClip (object)
++ type: `image` (string)
+
+## TimelineTimestamp (object)
++ hours: 3 (number)
++ minutes: 2 (number)
++ seconds: 59 (number)
++ milliseconds: 489 (number)
++ as_milliseconds: 15648898 (number)
++ as_string: `03:02:59.489` (string)
 
 ## StoryboardPager (object)
 + Include Pager
@@ -520,7 +545,6 @@ You cannot modify the media file itself.
 ## StoryboardTemplatePager (object)
 + Include Pager
 + data: StoryboardTemplate, StoryboardTemplate (array[StoryboardTemplate])
-
 
 ## User (object)
 
