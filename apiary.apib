@@ -436,24 +436,45 @@ You cannot modify the media file itself.
 + data: StoryboardFolder, StoryboardFolder (array[StoryboardFolder])
 
 ## StoryboardTimeline (object)
-+ title: `my layer` (string)
-+ order_weight: 10 (number)
 + layers: StoryboardTimelineLayer, StoryboardTimelineLayer (array[StoryboardTimelineLayer])
 
 ## StoryboardTimelineLayer (object)
-+ clips: StoryboardTimelineLayerClip
++ title: `my layer` (string)
++ order_weight: 10 (number)
++ clips: StoryboardTimelineLayerTextClip, StoryboardTimelineLayerImageClip (array[StoryboardTimelineLayerClip])
 
 ## StoryboardTimelineLayerClip (object)
++ starts_at
+    + Include TimelineTimestamp
++ duration
+    + Include TimelineTimestamp
 + effects (object)
     + fadein (object)
         + until
             + Include TimelineTimestamp
+    + fadeout (object)
+        + from
+            + IncludeTimelineTimestamp
+    + rotation (object)
+        + degrees: `30` (number)
++ dimensions (object)
+    + anchor
+        + Include Vector2D
+    + position
+        + Include Vector2D
+    + size
+        + Include Vector2D
 
 ## StoryboardTimelineLayerTextClip (object)
++ Include StoryboardTimelineLayerClip
 + type: `text` (string)
 
+
 ## StoryboardTimelineLayerImageClip (object)
++ Include StoryboardTimelineLayerClip
 + type: `image` (string)
++ attachment
+    + Include ImageMedia
 
 ## TimelineTimestamp (object)
 + hours: 3 (number)
@@ -482,6 +503,10 @@ You cannot modify the media file itself.
 + url: `http://example.org/images/123.png` (string)
 + width: 0 (number)
 + height: 0 (number)
+
+## Vector2D (object)
++ x: 120 (number)
++ y: 120 (number)
 
 ## ConvertedVideo (object)
 + id: 12 (number)
