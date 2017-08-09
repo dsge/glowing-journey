@@ -355,6 +355,12 @@ Create new template
 + Response 200 (application/json)
 
     + Attributes(MediaPager)
+
+### Show [GET /user/{user_id}/media/{id}]
+
++ Response 200 (application/json)
+
+    + Attributes(SingleAudioMedia)
     
 ### Create [POST]
 
@@ -392,7 +398,7 @@ You cannot modify the media file itself.
 
     + Attributes(ImageMedia)
     
-### Update [DELETE /user/{user_id}/media/{id}]
+### Delete [DELETE /user/{user_id}/media/{id}]
 
 + Response 204 (application/json)
 
@@ -572,6 +578,18 @@ You cannot modify the media file itself.
 + media_type: `audio` (string)
 + media
     + Include ConvertedAudio
+    
+## SingleAudioMedia (object)
++ Include AudioMedia
++ normalized_amplitudes: NormalisedAmplitudeChannel, NormalisedAmplitudeChannel (array[NormalisedAmplitudeChannel])
+
+## NormalisedAmplitudeChannel (array)
+- `-1` (number)
+- `0` (number)
+- `1` (number)
+- `0.5` (number)
+- `-0.5` (number)
+
 
 ## MediaPager (object)
 + Include Pager
